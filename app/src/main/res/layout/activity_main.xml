@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_pahlawan"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_card"
+        tools:itemCount="15"
+        />
+
+<!--    Jika awalan tools dan bukan android maka akan tampil di sisi developer saja dan tidak akan tampil di sisi user-->
+<!--    listitem : Panggil template list yang akan ditampilkan-->
+<!--    itemCount : Berapa banyak yang akan ditampilkan -->
+
+
+
+</RelativeLayout>

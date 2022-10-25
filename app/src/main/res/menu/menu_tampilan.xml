@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_card"
+        android:title="Mode Card View"
+        />
+
+    <item
+        android:id="@+id/menu_grid"
+        android:title="Mode Grid View"
+        />
+
+    <item
+        android:id="@+id/menu_night"
+        android:title="Mode Night"
+        />
+
+    <item
+        android:id="@+id/menu_help"
+        android:icon="@drawable/ic_call_24"
+        android:title="Help"
+        app:showAsAction="always"
+        />
+
+
+</menu>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    android:elevation="6dp">
+<!--    Elevation : untuk membuat tampilan menonjol kedepan-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp">
+
+        <ImageView
+            android:id="@+id/iv_foto"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@mipmap/ic_launcher"
+            />
+
+        <TextView
+            android:id="@+id/tv_nama"
+            android:textStyle="bold"
+            android:text="Nama Pahlawan"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/iv_foto"
+            android:layout_marginStart="16dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_tentang"
+            android:text="Tentang Pahlawan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/iv_foto"
+            android:layout_below="@+id/tv_nama"
+            android:layout_marginStart="16dp"
+            android:maxLines="3"
+            android:ellipsize="end"
+            />
+
+<!--        Maxlines : 3 => Menjadi 3 baris sa-->
+<!--        Elllipsize : titik 3, jika val start = depan, end = belakang, middle = tengah-->
+
+
+
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
