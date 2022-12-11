@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Pahlawan</string>
+    <string name="app_name">My Hero</string>
+    <string name="app_lang">en</string>
 </resources>

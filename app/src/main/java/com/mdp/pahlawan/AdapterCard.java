@@ -17,12 +17,13 @@ import java.util.ArrayList;
 
 public class AdapterCard extends RecyclerView.Adapter<AdapterCard.ViewHolder>
 {
-
     private ArrayList<ModelPahlawan> dataPahlawan;
+    private String appLang;
 
-    public AdapterCard(ArrayList<ModelPahlawan> dataPahlawan)
+    public AdapterCard(ArrayList<ModelPahlawan> dataPahlawan, String appLang)
     {
         this.dataPahlawan = dataPahlawan;
+        this.appLang = appLang;
     }
 
     @NonNull
@@ -36,10 +37,10 @@ public class AdapterCard extends RecyclerView.Adapter<AdapterCard.ViewHolder>
     @Override
     public void onBindViewHolder(@NonNull AdapterCard.ViewHolder holder, int position)
     {
-//        Tampilkan data
+        // Tampilkan data
         ModelPahlawan pahlawan = dataPahlawan.get(position);
         holder.tv_Nama.setText(pahlawan.getNama());
-        holder.tv_Tentang.setText(pahlawan.getTentang());
+        holder.tv_Tentang.setText((appLang.equals("id")) ? pahlawan.getTentang() : pahlawan.getAbout());
         Glide.with(holder.itemView.getContext())
                 .load(pahlawan.getFoto())
                 .apply(new RequestOptions()
@@ -50,7 +51,7 @@ public class AdapterCard extends RecyclerView.Adapter<AdapterCard.ViewHolder>
             @Override
             public void onClick(View view) {
                 String nama = pahlawan.getNama();
-                String tentang = pahlawan.getTentang();
+                String tentang = (appLang.equals("id")) ? pahlawan.getTentang() : pahlawan.getAbout();
                 String foto = pahlawan.getFoto();
                 Intent intent = new Intent(holder.itemView.getContext(), DetailActivity.class);
                 intent.putExtra("varNama", nama);
@@ -58,8 +59,6 @@ public class AdapterCard extends RecyclerView.Adapter<AdapterCard.ViewHolder>
                 intent.putExtra("varFoto", foto);
 
                 holder.itemView.getContext().startActivity(intent);
-
-
             }
         });
     }

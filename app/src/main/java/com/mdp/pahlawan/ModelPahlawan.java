@@ -3,6 +3,7 @@ package com.mdp.pahlawan;
 public class ModelPahlawan
 {
     private String nama, tentang, foto;
+    private String about;
 
     public String getNama()
     {
@@ -32,5 +33,13 @@ public class ModelPahlawan
     public void setFoto(String foto)
     {
         this.foto = foto;
+    }
+
+    public String getAbout() {
+        return about;
+    }
+
+    public void setAbout(String about) {
+        this.about = about;
     }
 }

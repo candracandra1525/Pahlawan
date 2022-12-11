@@ -12,6 +12,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -52,16 +53,19 @@ public class MainActivity extends AppCompatActivity
         {
             tampilDataCard();
         }
-//        tampilDataGrid();
+        // tampilDataGrid();
     }
 
     private void tampilDataCard()
     {
-        mView = 0;
-        rvPahlawan.setLayoutManager(new LinearLayoutManager(this));
-        AdapterCard adapterCard = new AdapterCard(data);
+        mView = 0; // card
+        // rvPahlawan.setLayoutManager(new LinearLayoutManager(this));
+        int gridColumnCount = getResources().getInteger(R.integer.grid_column_count);
+        rvPahlawan.setLayoutManager(new GridLayoutManager(this, gridColumnCount));
+        String appLang = getResources().getString(R.string.app_lang);
+        Toast.makeText(this, "Lang:" + appLang, Toast.LENGTH_SHORT).show();
+        AdapterCard adapterCard = new AdapterCard(data, appLang);
         rvPahlawan.setAdapter(adapterCard);
-
 
     }
 
@@ -132,20 +136,18 @@ public class MainActivity extends AppCompatActivity
                 }
 
         }
-
-
-//        if(item.getItemId() == R.id.menu_card)
-//        {
-//            setTitle("Mode Menu Card");
-//            tampilDataCard();
-//            System.exit(0);
-//        }
-//        else if(item.getItemId() == R.id.menu_grid)
-//        {
-//            setTitle("Mode Menu Grid");
-//            tampilDataGrid();
-//            System.exit(0);
-//        }
+        /* if(item.getItemId() == R.id.menu_card)
+        {
+            setTitle("Mode Menu Card");
+            tampilDataCard();
+            System.exit(0);
+        }
+        else if(item.getItemId() == R.id.menu_grid)
+        {
+            setTitle("Mode Menu Grid");
+            tampilDataGrid();
+            System.exit(0);
+        } */
         return super.onOptionsItemSelected(item);
     }
 
